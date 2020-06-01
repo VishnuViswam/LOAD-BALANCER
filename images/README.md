@@ -1,15 +1,18 @@
-<p align="center">
-	<img src="images/springBoot.png" alt="springBoot" width="58.3" height="58.3">
-	<img src="images/eureka.png" alt="eureka" width="271.6" height="58.24">
-  <h2 align="center">Load Balancer Using Java</h3>
-  <h3 align="center">
+<br />
+  <p align="center">
+  <img src="springBoot.png" alt="Logo" width="80" height="80">
+  <img src="eureka.png" alt="Logo" width="371. 025" height="79. 56">
+  <h2 align="center">Build A Load Balancer Using Java</h3>
+  <p align="center">
    A kick starter project to create a custom load-balancer in Java with the help of EUREKA NAMING SERVER and RIBBON. 
-  </h3>
-</p>
+  <br />
+  </p>
+  </p>
+<br /><br />
   
   # Network Architecture
   <p align="center">
- 	<img src="images/networkArchitecture.png" alt="Logo" width="690.4" height="488.8">
+  <img src="architecture.png" alt="Logo" width="690. 4" height="488. 8">
   </p>
 
 # Repository contains:-
@@ -90,7 +93,7 @@ Link :- http://localhost:8761
 
 <h3>Eureka Server Dashboard :- </h3>
 <p align="center">
-  <img src="images/eurekaServer1.png" alt="eurekaServer" width="1080" height="420">
+  <img src="eurekaServer1.png" alt="eurekaServer" width="1080" height="420">
 </p>
 
 ## 2) Server application
@@ -160,11 +163,11 @@ To run one more instance in another port we need to edit the <b>Run/Debug Config
   Click on the <b>Edit Configuration</b> option, it will be available on the right top side of the menu bar. 
 </p>
 <p align="center">
-  <img src="images/ide1.png" alt="Logo" width="334. 4" height="229. 6">
+  <img src="ide1.png" alt="Logo" width="334. 4" height="229. 6">
 </p>
   It will open a window as follows. Then enable <b>Allow parallel run</b> and press apply. 
  <p align="center">
-  <img src="images/ide2.png" alt="Logo" width="696" height="410">
+  <img src="ide2.png" alt="Logo" width="696" height="410">
 </p>
   Now change the port in the property file as 4001. Then run once again. 
 </p>
@@ -174,9 +177,9 @@ To run one more instance in another port we need to edit the <b>Run/Debug Config
   Right click on th main class -> click properties -> select main class -> click new button and add <b>-Dserver. port=4001</b> in the Vm Arguments as shown in the following images. 
 </p>
 <p align="center">
-  <img src="images/eclipse1.png" alt="Logo" width="744" height="365">
+  <img src="eclipse1.png" alt="Logo" width="744" height="365">
 <p align="center">
-  <img src="images/eclipse2.png" alt="Logo" width="836" height="443. 2">
+  <img src="eclipse2.png" alt="Logo" width="836" height="443. 2">
 </p>
 </p>
   Then select the new configuration and run. Now these two instances of server will be appear in the eureka server dashboard. 
@@ -333,7 +336,7 @@ public class ResponseModel {
 
 -Finally Eureka Server Dashboard will be as follows. 
 <p align="center">
-  <img src="images/eurekaServer2.png" alt="Logo" width="836" height="200">
+  <img src="eurekaServer2.png" alt="Logo" width="836" height="200">
 </p>
 
 # Result
