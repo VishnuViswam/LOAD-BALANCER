@@ -1,24 +1,33 @@
 <p align="center">
+<br/><br/>
 	<img src="images/springBoot.png" alt="springBoot" width="58.3" height="58.3">
 	<img src="images/eureka.png" alt="eureka" width="271.6" height="58.24">
-  <h2 align="center">Load Balancer Using Java</h3>
-  <h3 align="center">
-   A kick starter project to create a custom load-balancer in Java with the help of EUREKA NAMING SERVER and RIBBON. 
-  </h3>
+  <h1 align="center">Load Balancer Using Java</h1>
+  <!--
+<h3 align="left">About Project</h2>
+  <h4 align="left"> A kick starter project to create a custom load-balancer in Java with the help of EUREKA NAMING SERVER and RIBBON.	</h4>
+-->
+  <br/><br/>
 </p>
+
+
+
+## About Project
+  A kick starter project to create a custom load-balancer in Java with the help of EUREKA NAMING SERVER and RIBBON.
+
   
-  # Network Architecture
+## Network Architecture
   <p align="center">
  	<img src="images/networkArchitecture.png" alt="Logo" width="690.4" height="488.8">
   </p>
 
-# Repository contains:-
+## Repository contains:-
 
 * Load balancing server [netflix-eureka-naming-server]
 * Server application [micro-service-server]
 * Client application [micro-service-client]
 
-# Steps to run applications
+## Steps to run applications
 
 * Install JDK 11 or latest. 
 * Clone the Project repository into local. 
@@ -26,15 +35,15 @@
 * Then run micro-service-server application in two ports. 
 * At last run micro-service-client. 
 
-# How it works
+## How it works
 
 This architecture contains three different projects. 
 
-## 1) Load Balancing Server
+### 1) Load Balancing Server
 
 All client server communication will be done through this load balancing server. 
 
-### pom. xml
+#### pom. xml
 
 * We are using <b>netflix-eureka-server</b> library to enable the communication between client and server. 
 
@@ -56,7 +65,7 @@ All client server communication will be done through this load balancing server.
 </dependencies>
 ```
 
-### application. properties
+#### application. properties
 
 ``` 
 spring.application.name=netflix-eureka-naming-server // application unique name
@@ -67,7 +76,7 @@ eureka.client.fetch-registry=false
 
 ```
 
-### NetflixEurekaNamingServerApplication. java
+#### NetflixEurekaNamingServerApplication. java
 
 * <b>@EnableEurekaServer</b> annotation will allow the eureka server to control this application. 
 
@@ -93,7 +102,7 @@ Link :- http://localhost:8761
   <img src="images/eurekaServer1.png" alt="eurekaServer" width="1080" height="420">
 </p>
 
-## 2) Server application
+### 2) Server application
 
 * In-order to perform load distribution this application need to run in two instance. 
 * <b>spring-cloud-starter-netflix-eureka-client</b> used to enable communication with Eureka naming server
@@ -105,7 +114,7 @@ Link :- http://localhost:8761
 </dependency>
 ```
 
-### pom. xml
+#### pom. xml
 
 ``` 
 <properties>
@@ -125,7 +134,7 @@ Link :- http://localhost:8761
 </dependencies>
 ```
 
-### application. properties
+#### application. properties
 
 ``` 
 spring.application.name=micro-service-server // application unique name
@@ -135,7 +144,7 @@ eureka.client.service-url.default-zone=http://localhost:8761/eureka // end point
 
 ```
 
-### MicroServiceServerApplication. java
+#### MicroServiceServerApplication. java
 
 * <b>@EnableDiscoveryClient</b> annotation to register the application with eureka server. 
 
@@ -151,7 +160,7 @@ public class MicroServiceServerApplication {
 }
 ```
 
-#### Run Server application instance in two ports
+##### Run Server application instance in two ports
 
 First simply run the application as java application using main method. 
 To run one more instance in another port we need to edit the <b>Run/Debug Configurations</b> In the IDE. 
@@ -182,13 +191,13 @@ To run one more instance in another port we need to edit the <b>Run/Debug Config
   Then select the new configuration and run. Now these two instances of server will be appear in the eureka server dashboard. 
 </p>
 
-## 3) Client application
+### 3) Client application
 
 * This application will perform as consumer of APIs which is written in the main server. 
 * It consumes the APIs from the both main server instance based on availability through load balancer. 
 * We also use <b>netflix-eureka-client</b> library to communicate with load balancer application. 
 
-### OpenFeign
+#### OpenFeign
 
 * We are using OpenFeign to consume APIs rather than using traditional HTTP libraries. 
 * OpenFeign will act as a proxy in between server and client. 
@@ -200,7 +209,7 @@ To run one more instance in another port we need to edit the <b>Run/Debug Config
 </dependency>
 ```
 
-### Eureka Client & Ribbon
+#### Eureka Client & Ribbon
 
   + Ribbon will do the automatic switching of servers in the client side
   + Eureka will help us to dynamically add main server instances to the load balancer according to traffic. 
@@ -217,7 +226,7 @@ To run one more instance in another port we need to edit the <b>Run/Debug Config
 
 ```
 
-### pom. xml
+#### pom. xml
 
 ``` 
 <properties>
@@ -245,7 +254,7 @@ To run one more instance in another port we need to edit the <b>Run/Debug Config
 </dependencies>
 ```
 
-### application. properties
+#### application. properties
 
 ``` 
 server.servlet.contextPath=/microservice
@@ -256,7 +265,7 @@ eureka.client.service-url.default-zone=http://localhost:8761/eureka // end point
 
 ```
 
-### MicroServiceClientApplication. java
+#### MicroServiceClientApplication. java
 
 * <b>@EnableDiscoveryClient</b> annotation used to register the application with eureka server in the main class. 
 * <b>@EnableFeignClients</b> annotation used to connect the feign library. 
@@ -274,7 +283,7 @@ public class MicroServiceClientApplication {
 }
 ```
 
-### ClientController. java
+#### ClientController. java
 
 * It is a ordinary rest controller class
 
@@ -297,7 +306,7 @@ public class ClientController {
 }
 ```
 
-### ApiProxy. java
+#### ApiProxy. java
 
 * Act as proxy class in between API and client. 
 * <b>@FeignClient(name = "micro-service-server") annotation </b> will configure the information of API exposed application name. 
@@ -313,7 +322,7 @@ public interface ApiProxy {
 }
 ```
 
-### ResponseModel. java
+#### ResponseModel. java
 
 * It is a traditional model class. 
 
@@ -336,7 +345,7 @@ public class ResponseModel {
   <img src="images/eurekaServer2.png" alt="Logo" width="836" height="200">
 </p>
 
-# Result
+## Result
 
 * call client application API to see the load balancing magic. 
 
