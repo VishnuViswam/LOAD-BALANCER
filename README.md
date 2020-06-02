@@ -285,7 +285,7 @@ public class MicroServiceClientApplication {
 
 #### ClientController. java
 
-* It is a ordinary rest controller class
+* It is an ordinary rest controller class
 
 ``` 
 @RestController
