@@ -18,7 +18,7 @@
   
 ## Network Architecture
   <p align="center">
- 	<img src="images/networkArchitecture.png" alt="Logo" width="690.4" height="488.8">
+ 	<img src="images/architecture.png" alt="Logo" width="606" height="393">
   </p>
 
 ## Repository contains:-
@@ -49,8 +49,8 @@ All client server communication will be done through this load balancing server.
 
 ``` 
 <properties>
-	<java.version>11</java.version>
-	<spring-cloud.version>Hoxton.SR4</spring-cloud.version>
+  <java.version>11</java.version>
+  <spring-cloud.version>Hoxton.SR4</spring-cloud.version>
 </properties>
 
 <dependencies>
@@ -95,7 +95,7 @@ public class NetflixEurekaNamingServerApplication {
 
 * After running this application we can access the eureka server dashboard in following url
 
-Link :- http://localhost:8761
+URL:- http://localhost:8761
 
 <h3>Eureka Server Dashboard :- </h3>
 <p align="center">
@@ -160,7 +160,7 @@ public class MicroServiceServerApplication {
 }
 ```
 
-##### Run Server application instance in two ports
+#### Run Server application instance in two ports
 
 First simply run the application as java application using main method. 
 To run one more instance in another port we need to edit the <b>Run/Debug Configurations</b> In the IDE. 
@@ -340,7 +340,7 @@ public class ResponseModel {
 
 * After running client application, instance of this application also appear in the eureka server dashboard. 
 
--Finally Eureka Server Dashboard will be as follows. 
+- Finally Eureka Server Dashboard will be as follows. 
 <p align="center">
   <img src="images/eurekaServer2.png" alt="Logo" width="836" height="200">
 </p>
