@@ -169,7 +169,7 @@ To run one more instance in another port we need to edit the <b>Run/Debug Config
   Now change the port in the property file as 4001. Then run once again. 
 </p>
  
-<h3>In In Eclipse :- </h3>
+<h3>In Eclipse :- </h3>
 <p>  
   Right click on th main class -> click properties -> select main class -> click new button and add <b>-Dserver. port=4001</b> in the Vm Arguments as shown in the following images. 
 </p>
@@ -315,7 +315,7 @@ public interface ApiProxy {
 
 ### ResponseModel. java
 
-* It isa traditional model class. 
+* It is a traditional model class. 
 
 ``` 
 public class ResponseModel {
